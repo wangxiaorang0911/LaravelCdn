@@ -21,8 +21,7 @@
         {
             "name": "Juha Vehnia",
             "email": "juha.vehnia@gmail.com"
-        },
-
+        }
     ],
     "require": {
         "php": ">=5.5.9",
