@@ -1,5 +1,5 @@
 {
-    "name": "publiux/laravelcdn",
+    "name": "juhasev/laravelcdn",
     "description": "Content Delivery Network (CDN) Package for Laravel",
     "license": "MIT",
     "keywords": [
@@ -17,7 +17,12 @@
         {
             "name": "Raul Ruiz",
             "email": "publiux@gmail.com"
-        }
+        },
+        {
+            "name": "Juha Vehnia",
+            "email": "juha.vehnia@gmail.com"
+        },
+
     ],
     "require": {
         "php": ">=5.5.9",
@@ -34,19 +39,19 @@
     "autoload": {
         "classmap": [
             "tests/TestCase.php",
-            "src/Publiux/laravelcdn/Exceptions"
+            "src/Juhasev/laravelcdn/Exceptions"
         ],
       "psr-0": {
-            "Publiux\\laravelcdn\\": "src/"
+            "Juhasev\\laravelcdn\\": "src/"
         }
     },
   "extra": {
     "laravel": {
       "providers": [
-        "Publiux\\laravelcdn\\CdnServiceProvider"
+        "Juhasev\\laravelcdn\\CdnServiceProvider"
       ],
       "aliases": {
-        "CDN": "Publiux\\laravelcdn\\Facades\\CdnFacadeAccessor"
+        "CDN": "Juhasev\\laravelcdn\\Facades\\CdnFacadeAccessor"
       }
     }
   },

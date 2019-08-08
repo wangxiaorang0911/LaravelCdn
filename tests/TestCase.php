@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Publiux\laravelcdn\Tests;
+namespace Juhasev\laravelcdn\Tests;
 
 // requiring this file to reference assertions as global functions. (to skip the $this->)
 require_once 'vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
@@ -28,11 +28,12 @@ class TestCase extends PHPUnit
     /**
      * Call protected/private method of a class.
      *
-     * @param object &$object    Instantiated object that we will run method on.
+     * @param object &$object Instantiated object that we will run method on.
      * @param string $methodName Method name to call
-     * @param array  $parameters Array of parameters to pass into method.
+     * @param array $parameters Array of parameters to pass into method.
      *
      * @return mixed Method return.
+     * @throws \ReflectionException
      */
     public function invokeMethod(&$object, $methodName, array $parameters = [])
     {

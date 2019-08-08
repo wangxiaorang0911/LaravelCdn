@@ -1,11 +1,7 @@
+
+![alt text](./laravel-cdn.svg "Laravel CDN")
+
 # Laravel CDN Assets Manager
-
-[![Latest Stable Version](https://poser.pugx.org/publiux/laravelcdn/v/stable)](https://packagist.org/packages/publiux/laravelcdn)
-[![Total Downloads](https://poser.pugx.org/publiux/laravelcdn/downloads)](https://packagist.org/packages/publiux/laravelcdn)
-[![Build Status](https://travis-ci.org/publiux/laravelcdn.svg)](https://travis-ci.org/publiux/laravelcdn)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/publiux/laravelcdn/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/publiux/laravelcdn/?branch=master)
-[![License](https://poser.pugx.org/publiux/laravelcdn/license)](https://packagist.org/packages/publiux/laravelcdn)
-
 
 ##### Content Delivery Network Package for Laravel
 
@@ -16,8 +12,7 @@ And then it allows them to switch between the local and the online version of th
 This project has been forked from https://github.com/Vinelab/cdn. All credit for the original work goes there.
 
 #### Laravel Support
-- This fork supports Laravel 5.2 up to an including Laravel 5.5 (`master`).
-- Laravel 5.5 is supported, as is package auto-discovery.
+- Laravel 5.5, 5.6, 5.7 and 5.8 are supported, as is package auto-discovery.
 
 ## Highlights
 
@@ -37,10 +32,10 @@ This project has been forked from https://github.com/Vinelab/cdn. All credit for
 
 #### Via Composer
 
-Require `publiux/laravelcdn` in your project:
+Require `juhasev/laravelcdn` in your project:
 
 ```bash
-composer require "publiux/laravelcdn:~2.0"
+composer require "juhasev/laravelcdn:~2.0"
 ```
 
 *If you are using Laravel 5.4 or below, you need to register the service provider:*
@@ -50,14 +45,14 @@ Laravel 5.4 and below: Add the service provider and facade to `config/app.php`:
 ```php
 'providers' => array(
      //...
-     Publiux\laravelcdn\CdnServiceProvider::class,
+     Juhasev\laravelcdn\CdnServiceProvider::class,
 ),
 ```
 
 ```php
 'aliases' => array(
      //...
-     'CDN' => Publiux\laravelcdn\Facades\CdnFacadeAccessor::class
+     'CDN' => Juhasev\laravelcdn\Facades\CdnFacadeAccessor::class
 ),
 ```
 
@@ -66,7 +61,7 @@ Laravel 5.4 and below: Add the service provider and facade to `config/app.php`:
 Publish the package config file:
 
 ```bash
-php artisan vendor:publish --provider 'Publiux\laravelcdn\CdnServiceProvider'
+php artisan vendor:publish --provider 'Juhasev\laravelcdn\CdnServiceProvider'
 ```
 
 ## Environment Configuration
@@ -272,19 +267,19 @@ $ ./vendor/bin/phpunit
 
 ## Support
 
-Please request support or submit issues [via Github](https://github.com/publiux/laravelcdn/issues)
+Please request support or submit issues [via Github](https://github.com/juhasev/laravelcdn/issues)
 
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/publiux/laravelcdn/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/juhasev/laravelcdn/blob/master/CONTRIBUTING.md) for details.
 
 ## Security Related Issues
 
-If you discover any security related issues, please email publiux@gmail.com instead of using the issue tracker for faster response. You should open an issue at the same time.
+If you discover any security related issues, please email juhasev@gmail.com instead of using the issue tracker for faster response. You should open an issue at the same time.
 
 ## Credits
-- [Raul Ruiz](https://github.com/publiux) (forker)
+- [Raul Ruiz](https://github.com/juhasev) (forker)
 - [Mahmoud Zalt](https://github.com/Mahmoudz) (original developer)
 - [Filipe Garcia](https://github.com/filipegar) (contributred pre-fork, uncredited pull request for duplicate uploading verification)
 - [Contributors from original project](https://github.com/Vinelab/cdn/graphs/contributors)
@@ -293,7 +288,7 @@ If you discover any security related issues, please email publiux@gmail.com inst
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/publiux/laravelcdn/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/juhasev/laravelcdn/blob/master/LICENSE) for more information.
 
 ## Changelog
 
