@@ -8,8 +8,14 @@
 The package provides the developer the ability to upload their assets (or any public file) to a CDN with a single artisan command.
 And then it allows them to switch between the local and the online version of the files.
 
+##### History
+This project has had multiple homes and unfortunately the previous maintainers have lost interest into this project. I am 
+planning on maintaining this package as we have several projects that make use of it. This is the latest version of Laravel CDN.
+
+###### Fork from [Publiux/laravelcdn](https://github.com/publiux/laravelcdn)
 ###### Fork From [Vinelab/cdn](https://github.com/Vinelab/cdn)
-This project has been forked from https://github.com/Vinelab/cdn. All credit for the original work goes there.
+
+This project has been forked originally from https://github.com/Vinelab/cdn. All credit for the original work goes there.
 
 #### Laravel Support
 - Laravel 5.5, 5.6, 5.7 and 5.8 are supported, as is package auto-discovery.
