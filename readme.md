@@ -279,7 +279,8 @@ Please see [CONTRIBUTING](https://github.com/juhasev/laravelcdn/blob/master/CONT
 If you discover any security related issues, please email juhasev@gmail.com instead of using the issue tracker for faster response. You should open an issue at the same time.
 
 ## Credits
-- [Raul Ruiz](https://github.com/juhasev) (forker)
+- [Juha Vehnia](https://github.com/juhasev) (forker)
+- [Raul Ruiz](https://github.com/publiux) (original forker)
 - [Mahmoud Zalt](https://github.com/Mahmoudz) (original developer)
 - [Filipe Garcia](https://github.com/filipegar) (contributred pre-fork, uncredited pull request for duplicate uploading verification)
 - [Contributors from original project](https://github.com/Vinelab/cdn/graphs/contributors)
@@ -291,6 +292,8 @@ If you discover any security related issues, please email juhasev@gmail.com inst
 The MIT License (MIT). Please see [License File](https://github.com/juhasev/laravelcdn/blob/master/LICENSE) for more information.
 
 ## Changelog
+#### v2.0.9
+- Added support for Laravel 5.8
 
 #### v2.0.5
 - Added connection error reporting
