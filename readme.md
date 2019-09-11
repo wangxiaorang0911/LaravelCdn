@@ -298,6 +298,10 @@ If you discover any security related issues, please email juhasev@gmail.com inst
 The MIT License (MIT). Please see [License File](https://github.com/juhasev/laravelcdn/blob/master/LICENSE) for more information.
 
 ## Changelog
+
+#### v2.0.10
+- Added support for Laravel 6.0
+
 #### v2.0.9
 - Added support for Laravel 5.8
 
