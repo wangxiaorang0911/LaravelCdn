@@ -6,7 +6,7 @@ namespace Juhasev\laravelcdn\Tests;
 // requiring this file to reference assertions as global functions. (to skip the $this->)
 require_once 'vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
 
-use PHPUnit_Framework_TestCase as PHPUnit;
+use PHPUnit\Framework\TestCase as PHPUnit;
 
 class TestCase extends PHPUnit
 {
