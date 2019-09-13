@@ -18,7 +18,7 @@ use Symfony\Component\Finder\Finder as SymfonyFinder;
 class Finder extends SymfonyFinder implements FinderInterface
 {
     /**
-     * @var \Symfony\Component\Console\Output\ConsoleOutput
+     * @var ConsoleOutput
      */
     protected $console;
 

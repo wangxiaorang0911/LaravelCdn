@@ -18,7 +18,7 @@ use SampleNinja\LaravelCdn\Exceptions\UnsupportedProviderException;
  */
 class ProviderFactory implements ProviderFactoryInterface
 {
-    const DRIVERS_NAMESPACE = 'Juhasev\\laravelcdn\\Providers\\';
+    const DRIVERS_NAMESPACE = 'SampleNinja\\LaravelCdn\\Providers\\';
 
     /**
      * Create and return an instance of the corresponding
@@ -26,7 +26,7 @@ class ProviderFactory implements ProviderFactoryInterface
      *
      * @param array $configurations
      *
-     * @throws \SampleNinja\LaravelCdn\UnsupportedDriverException
+     * @throws UnsupportedProviderException
      *
      * @return mixed
      */
