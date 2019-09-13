@@ -51,14 +51,14 @@ Laravel 5.4 and below: Add the service provider and facade to `config/app.php`:
 ```php
 'providers' => array(
      //...
-     Juhasev\laravelcdn\CdnServiceProvider::class,
+     SampleNinja\LaravelCdn\CdnServiceProvider::class,
 ),
 ```
 
 ```php
 'aliases' => array(
      //...
-     'CDN' => Juhasev\laravelcdn\Facades\CdnFacadeAccessor::class
+     'CDN' => SampleNinja\LaravelCdn\Facades\CdnFacadeAccessor::class
 ),
 ```
 
@@ -67,7 +67,7 @@ Laravel 5.4 and below: Add the service provider and facade to `config/app.php`:
 Publish the package config file:
 
 ```bash
-php artisan vendor:publish --provider 'Juhasev\laravelcdn\CdnServiceProvider'
+php artisan vendor:publish --provider 'SampleNinja\LaravelCdn\CdnServiceProvider'
 ```
 
 ## Environment Configuration
@@ -278,7 +278,7 @@ Please request support or submit issues [via Github](https://github.com/juhasev/
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/juhasev/laravelcdn/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/juhasev/LaravelCdn/blob/master/CONTRIBUTING.md) for details.
 
 ## Security Related Issues
 
@@ -295,7 +295,7 @@ If you discover any security related issues, please email juhasev@gmail.com inst
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/juhasev/laravelcdn/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/juhasev/LaravelCdn/blob/master/LICENSE) for more information.
 
 ## Changelog
 
