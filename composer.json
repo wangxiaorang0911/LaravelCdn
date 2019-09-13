@@ -38,19 +38,19 @@
     "autoload": {
         "classmap": [
             "tests/TestCase.php",
-            "src/Juhasev/laravelcdn/Exceptions"
+            "src/Exceptions"
         ],
       "psr-0": {
-            "Juhasev\\laravelcdn\\": "src/"
+            "SampleNinja\\LaravelCdn\\": "src/"
         }
     },
   "extra": {
     "laravel": {
       "providers": [
-        "Juhasev\\laravelcdn\\CdnServiceProvider"
+        "SampleNinja\\LaravelCdn\\CdnServiceProvider"
       ],
       "aliases": {
-        "CDN": "Juhasev\\laravelcdn\\Facades\\CdnFacadeAccessor"
+        "CDN": "SampleNinja\\LaravelCdn\\Facades\\CdnFacadeAccessor"
       }
     }
   },

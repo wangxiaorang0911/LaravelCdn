@@ -1,6 +1,6 @@
 <?php
 
-namespace Juhasev\laravelcdn\Tests;
+namespace SampleNinja\LaravelCdn\Tests;
 
 use Illuminate\Support\Collection;
 use Mockery as M;
@@ -27,10 +27,10 @@ class AwsS3ProviderTest extends TestCase
         $this->m_console = M::mock('Symfony\Component\Console\Output\ConsoleOutput');
         $this->m_console->shouldReceive('writeln')->atLeast(2);
 
-        $this->m_validator = M::mock('Juhasev\laravelcdn\Validators\Contracts\ProviderValidatorInterface');
+        $this->m_validator = M::mock('SampleNinja\LaravelCdn\Validators\Contracts\ProviderValidatorInterface');
         $this->m_validator->shouldReceive('validate');
 
-        $this->m_helper = M::mock('Juhasev\laravelcdn\CdnHelper');
+        $this->m_helper = M::mock('SampleNinja\LaravelCdn\CdnHelper');
         $this->m_helper->shouldReceive('parseUrl')
             ->andReturn($this->pased_url);
 
@@ -38,7 +38,7 @@ class AwsS3ProviderTest extends TestCase
         $this->m_spl_file->shouldReceive('getPathname')->andReturn('juhasev/laravelcdn/tests/Juhasev/laravelcdn/AwsS3ProviderTest.php');
         $this->m_spl_file->shouldReceive('getRealPath')->andReturn(__DIR__.'/AwsS3ProviderTest.php');
 
-        $this->p_awsS3Provider = M::mock('\Juhasev\laravelcdn\Providers\AwsS3Provider[connect]', array(
+        $this->p_awsS3Provider = M::mock('\SampleNinja\LaravelCdn\Providers\AwsS3Provider[connect]', array(
             $this->m_console,
             $this->m_validator,
             $this->m_helper,
@@ -95,7 +95,7 @@ class AwsS3ProviderTest extends TestCase
 
         $awsS3Provider_obj = $this->p_awsS3Provider->init($configurations);
 
-        assertInstanceOf('Juhasev\laravelcdn\Providers\AwsS3Provider', $awsS3Provider_obj);
+        assertInstanceOf('SampleNinja\LaravelCdn\Providers\AwsS3Provider', $awsS3Provider_obj);
     }
 
     public function testUploadingAssets()

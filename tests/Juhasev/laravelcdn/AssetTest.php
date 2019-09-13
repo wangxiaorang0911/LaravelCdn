@@ -1,6 +1,6 @@
 <?php
 
-namespace Juhasev\laravelcdn\Tests;
+namespace SampleNinja\LaravelCdn\Tests;
 
 use Mockery as M;
 
@@ -17,7 +17,7 @@ class AssetTest extends TestCase
     {
         parent::setUp();
 
-        $this->asset = new \Juhasev\laravelcdn\Asset();
+        $this->asset = new \SampleNinja\LaravelCdn\Asset();
     }
 
     public function tearDown()
@@ -36,7 +36,7 @@ class AssetTest extends TestCase
             ],
         ]);
 
-        // check the returned object is of type Juhasev\laravelcdn\Asset
+        // check the returned object is of type SampleNinja\LaravelCdn\Asset
         assertEquals($result, $this->asset);
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Juhasev\laravelcdn\Tests;
+namespace SampleNinja\LaravelCdn\Tests;
 
 use Mockery as M;
 
@@ -57,19 +57,19 @@ class CdnFacadeTest extends TestCase
         $this->path_path = 'public/foo/bar.php';
         $this->asset_url = 'https://bucket.s3.amazonaws.com/public/foo/bar.php';
 
-        $this->provider = M::mock('Juhasev\laravelcdn\Providers\AwsS3Provider');
+        $this->provider = M::mock('SampleNinja\LaravelCdn\Providers\AwsS3Provider');
 
-        $this->provider_factory = M::mock('Juhasev\laravelcdn\Contracts\ProviderFactoryInterface');
+        $this->provider_factory = M::mock('SampleNinja\LaravelCdn\Contracts\ProviderFactoryInterface');
         $this->provider_factory->shouldReceive('create')->once()->andReturn($this->provider);
 
-        $this->helper = M::mock('Juhasev\laravelcdn\Contracts\CdnHelperInterface');
+        $this->helper = M::mock('SampleNinja\LaravelCdn\Contracts\CdnHelperInterface');
         $this->helper->shouldReceive('getConfigurations')->once()->andReturn($configuration_file);
         $this->helper->shouldReceive('cleanPath')->andReturn($this->asset_path);
         $this->helper->shouldReceive('startsWith')->andReturn(true);
 
-        $this->validator = new \Juhasev\laravelcdn\Validators\CdnFacadeValidator();
+        $this->validator = new \SampleNinja\LaravelCdn\Validators\CdnFacadeValidator();
 
-        $this->facade = new \Juhasev\laravelcdn\CdnFacade(
+        $this->facade = new \SampleNinja\LaravelCdn\CdnFacade(
             $this->provider_factory, $this->helper, $this->validator);
     }
 
@@ -102,7 +102,7 @@ class CdnFacadeTest extends TestCase
     }
 
     /**
-     * @expectedException \Juhasev\laravelcdn\Exceptions\EmptyPathException
+     * @expectedException \SampleNinja\LaravelCdn\Exceptions\EmptyPathException
      */
     public function testUrlGeneratorThrowsException()
     {

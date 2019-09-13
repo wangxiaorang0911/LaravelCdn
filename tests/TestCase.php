@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Juhasev\laravelcdn\Tests;
+namespace SampleNinja\LaravelCdn\Tests;
 
 // requiring this file to reference assertions as global functions. (to skip the $this->)
 require_once 'vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';

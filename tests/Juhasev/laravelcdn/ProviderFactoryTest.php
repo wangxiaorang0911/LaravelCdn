@@ -1,6 +1,6 @@
 <?php
 
-namespace Juhasev\laravelcdn\Tests;
+namespace SampleNinja\LaravelCdn\Tests;
 
 use Mockery as M;
 
@@ -17,7 +17,7 @@ class ProviderFactoryTest extends TestCase
     {
         parent::setUp();
 
-        $this->provider_factory = new \Juhasev\laravelcdn\ProviderFactory();
+        $this->provider_factory = new \SampleNinja\LaravelCdn\ProviderFactory();
     }
 
     public function tearDown()
@@ -30,7 +30,7 @@ class ProviderFactoryTest extends TestCase
     {
         $configurations = ['default' => 'AwsS3'];
 
-        $m_aws_s3 = M::mock('Juhasev\laravelcdn\Providers\AwsS3Provider');
+        $m_aws_s3 = M::mock('SampleNinja\LaravelCdn\Providers\AwsS3Provider');
 
         \Illuminate\Support\Facades\App::shouldReceive('make')->once()->andReturn($m_aws_s3);
 
@@ -45,13 +45,13 @@ class ProviderFactoryTest extends TestCase
     }
 
     /**
-     * @expectedException \Juhasev\laravelcdn\Exceptions\MissingConfigurationException
+     * @expectedException \SampleNinja\LaravelCdn\Exceptions\MissingConfigurationException
      */
     public function testCreateThrowsExceptionWhenMissingDefaultConfiguration()
     {
         $configurations = ['default' => ''];
 
-        $m_aws_s3 = M::mock('Juhasev\laravelcdn\Providers\AwsS3Provider');
+        $m_aws_s3 = M::mock('SampleNinja\LaravelCdn\Providers\AwsS3Provider');
 
         \Illuminate\Support\Facades\App::shouldReceive('make')->once()->andReturn($m_aws_s3);
 
