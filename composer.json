@@ -50,7 +50,7 @@
         "SampleNinja\\LaravelCdn\\CdnServiceProvider"
       ],
       "aliases": {
-        "CDN": "SampleNinja\\LaravelCdn\\Facades\\CdnFacadeAccessor"
+        "Cdn": "SampleNinja\\LaravelCdn\\Facades\\CdnFacadeAccessor"
       }
     }
   },
