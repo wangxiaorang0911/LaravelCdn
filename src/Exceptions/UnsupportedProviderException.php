@@ -4,7 +4,7 @@ namespace SampleNinja\LaravelCdn\Exceptions;
 
 use App\Exceptions\CdnException;
 
-class MissingConfigurationFileException extends CdnException
+class UnsupportedProviderException extends CdnException
 {
     // Redefine the exception so message isn't optional
     public function __construct($message, $code = 0, Exception $previous = null) {
