@@ -20,12 +20,12 @@ class CdnHelper implements CdnHelperInterface
     /**
      * An object of the 'Repository' class that allows reading the laravel config files.
      *
-     * @var \Illuminate\Config\Repository
+     * @var Repository
      */
     protected $configurations;
 
     /**
-     * @param \Illuminate\Config\Repository $configurations
+     * @param Repository $configurations
      */
     public function __construct(Repository $configurations)
     {
