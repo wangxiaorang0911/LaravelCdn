@@ -7,6 +7,7 @@ use SampleNinja\LaravelCdn\Contracts\CdnFacadeInterface;
 use SampleNinja\LaravelCdn\Contracts\CdnHelperInterface;
 use SampleNinja\LaravelCdn\Contracts\ProviderFactoryInterface;
 use SampleNinja\LaravelCdn\Exceptions\EmptyPathException;
+use SampleNinja\LaravelCdn\Providers\Contracts\ProviderInterface;
 use SampleNinja\LaravelCdn\Validators\CdnFacadeValidator;
 
 /**
@@ -24,33 +25,33 @@ class CdnFacade implements CdnFacadeInterface
     protected $configurations;
 
     /**
-     * @var \SampleNinja\LaravelCdn\Contracts\ProviderFactoryInterface
+     * @var ProviderFactoryInterface
      */
     protected $provider_factory;
 
     /**
      * instance of the default provider object.
      *
-     * @var \SampleNinja\LaravelCdn\Providers\Contracts\ProviderInterface
+     * @var ProviderInterface
      */
     protected $provider;
 
     /**
-     * @var \SampleNinja\LaravelCdn\Contracts\CdnHelperInterface
+     * @var CdnHelperInterface
      */
     protected $helper;
 
     /**
-     * @var \SampleNinja\LaravelCdn\Validators\CdnFacadeValidator
+     * @var CdnFacadeValidator
      */
     protected $cdn_facade_validator;
 
     /**
      * Calls the provider initializer.
      *
-     * @param \SampleNinja\LaravelCdn\Contracts\ProviderFactoryInterface $provider_factory
-     * @param \SampleNinja\LaravelCdn\Contracts\CdnHelperInterface       $helper
-     * @param \SampleNinja\LaravelCdn\Validators\CdnFacadeValidator      $cdn_facade_validator
+     * @param ProviderFactoryInterface $provider_factory
+     * @param CdnHelperInterface $helper
+     * @param CdnFacadeValidator $cdn_facade_validator
      */
     public function __construct(
         ProviderFactoryInterface $provider_factory,
@@ -85,7 +86,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @param $path
      *
-     * @throws Exceptions\EmptyPathException
+     * @throws EmptyPathException
      *
      * @return mixed
      */
@@ -140,7 +141,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @return mixed
      *
-     * @throws Exceptions\EmptyPathException, \InvalidArgumentException
+     * @throws EmptyPathException, \InvalidArgumentException
      */
     public function mix($path)
     {
@@ -164,7 +165,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @param $path
      *
-     * @throws Exceptions\EmptyPathException, \InvalidArgumentException
+     * @throws EmptyPathException, \InvalidArgumentException
      *
      * @return mixed
      */
@@ -187,7 +188,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @param $path
      *
-     * @throws Exceptions\EmptyPathException
+     * @throws EmptyPathException
      *
      * @return mixed
      */
