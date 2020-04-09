@@ -19,7 +19,7 @@ This project has been forked originally from https://github.com/Vinelab/cdn. All
 
 #### Laravel Support
 - Laravel 5.5, 5.6, 5.7, 5.8 and 6 are supported, as is package auto-discovery.
-
+a
 ## Highlights
 
 - Amazon Web Services (AWS) - S3
