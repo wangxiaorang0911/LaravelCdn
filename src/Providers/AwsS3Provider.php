@@ -49,6 +49,7 @@ class AwsS3Provider extends Provider implements ProviderInterface
                     'version' => null,
                     'region' => null,
                     'endpoint' => null,
+                    'use_path_style_endpoint' => null,
                     'buckets' => null,
                     'upload_folder' => '',
                     'http' => null,
@@ -136,6 +137,7 @@ class AwsS3Provider extends Provider implements ProviderInterface
             'version' => $this->default['providers']['aws']['s3']['version'],
             'region' => $this->default['providers']['aws']['s3']['region'],
             'endpoint' => $this->default['providers']['aws']['s3']['endpoint'],
+            'use_path_style_endpoint' => $this->default['providers']['aws']['s3']['use_path_style_endpoint'],
             'buckets' => $this->default['providers']['aws']['s3']['buckets'],
             'acl' => $this->default['providers']['aws']['s3']['acl'],
             'cloudfront' => $this->default['providers']['aws']['s3']['cloudfront']['use'],
@@ -227,6 +229,7 @@ class AwsS3Provider extends Provider implements ProviderInterface
             $this->setS3Client(new S3Client([
                         'version' => $this->supplier['version'],
                         'region' => $this->supplier['region'],
+                        'use_path_style_endpoint' => $this->supplier['use_path_style_endpoint'],
                         'endpoint' => $this->supplier['endpoint'],
                         'http' => $this->supplier['http']
                     ]
@@ -277,11 +280,8 @@ class AwsS3Provider extends Provider implements ProviderInterface
         $assets->transform(function ($item, $key) use (&$filesOnAWS) {
             $fileOnAWS = $filesOnAWS->get(str_replace('\\', '/', $item->getPathName()));
 
-            // New item
-            if (!isset($fileOnAWS['LastModified'])) return $item;
-
-            // Check if size has changed and only then upload
-            if ($item->getSize() !== $fileOnAWS['Size']) {
+            //select to upload files that are different in size AND last modified time.
+            if (!($item->getMTime() === $fileOnAWS['LastModified']) && !($item->getSize() === $fileOnAWS['Size'])) {
                 return $item;
             }
         });
@@ -376,11 +376,14 @@ class AwsS3Provider extends Provider implements ProviderInterface
         }
 
         $url = $this->cdn_helper->parseUrl($this->getUrl());
-
         $bucket = $this->getBucket();
         $bucket = (!empty($bucket)) ? $bucket.'.' : '';
-
-        return $url['scheme'] . '://' . $bucket . $url['host'] . '/' . $path;
+		if ($this->supplier['use_path_style_endpoint'] === true) {
+            return $url['scheme'] . '://' . $url['host'] . '/' . $path;
+        } else {
+           return $url['scheme'] . '://' . $bucket . $url['host'] . '/' . $path;
+        }
+        
     }
 
     /**

@@ -7,7 +7,6 @@ use SampleNinja\LaravelCdn\Contracts\CdnFacadeInterface;
 use SampleNinja\LaravelCdn\Contracts\CdnHelperInterface;
 use SampleNinja\LaravelCdn\Contracts\ProviderFactoryInterface;
 use SampleNinja\LaravelCdn\Exceptions\EmptyPathException;
-use SampleNinja\LaravelCdn\Providers\Contracts\ProviderInterface;
 use SampleNinja\LaravelCdn\Validators\CdnFacadeValidator;
 
 /**
@@ -25,33 +24,33 @@ class CdnFacade implements CdnFacadeInterface
     protected $configurations;
 
     /**
-     * @var ProviderFactoryInterface
+     * @var \SampleNinja\LaravelCdn\Contracts\ProviderFactoryInterface
      */
     protected $provider_factory;
 
     /**
      * instance of the default provider object.
      *
-     * @var ProviderInterface
+     * @var \SampleNinja\LaravelCdn\Providers\Contracts\ProviderInterface
      */
     protected $provider;
 
     /**
-     * @var CdnHelperInterface
+     * @var \SampleNinja\LaravelCdn\Contracts\CdnHelperInterface
      */
     protected $helper;
 
     /**
-     * @var CdnFacadeValidator
+     * @var \SampleNinja\LaravelCdn\Validators\CdnFacadeValidator
      */
     protected $cdn_facade_validator;
 
     /**
      * Calls the provider initializer.
      *
-     * @param ProviderFactoryInterface $provider_factory
-     * @param CdnHelperInterface $helper
-     * @param CdnFacadeValidator $cdn_facade_validator
+     * @param \SampleNinja\LaravelCdn\Contracts\ProviderFactoryInterface $provider_factory
+     * @param \SampleNinja\LaravelCdn\Contracts\CdnHelperInterface       $helper
+     * @param \SampleNinja\LaravelCdn\Validators\CdnFacadeValidator      $cdn_facade_validator
      */
     public function __construct(
         ProviderFactoryInterface $provider_factory,
@@ -86,7 +85,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @param $path
      *
-     * @throws EmptyPathException
+     * @throws Exceptions\EmptyPathException
      *
      * @return mixed
      */
@@ -110,7 +109,7 @@ class CdnFacade implements CdnFacadeInterface
         // if the package is surpassed, then return the same $path
         // to load the asset from the localhost
         if (isset($this->configurations['bypass']) && $this->configurations['bypass']) {
-            return Request::root().'/'.$path;
+            return $path;
         }
 
         if (!isset($path)) {
@@ -127,7 +126,6 @@ class CdnFacade implements CdnFacadeInterface
         // remove slashes from begging and ending of the path
         // and append directories if needed
         $clean_path = $prepend.$this->helper->cleanPath($path);
-
         // call the provider specific url generator
         return $this->provider->urlGenerator($clean_path);
     }
@@ -141,7 +139,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @return mixed
      *
-     * @throws EmptyPathException, \InvalidArgumentException
+     * @throws Exceptions\EmptyPathException, \InvalidArgumentException
      */
     public function mix($path)
     {
@@ -165,7 +163,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @param $path
      *
-     * @throws EmptyPathException, \InvalidArgumentException
+     * @throws Exceptions\EmptyPathException, \InvalidArgumentException
      *
      * @return mixed
      */
@@ -188,7 +186,7 @@ class CdnFacade implements CdnFacadeInterface
      *
      * @param $path
      *
-     * @throws EmptyPathException
+     * @throws Exceptions\EmptyPathException
      *
      * @return mixed
      */
